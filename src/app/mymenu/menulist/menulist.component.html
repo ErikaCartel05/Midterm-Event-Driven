@@ -30,6 +30,91 @@
                    </div>
             </div>
             <!--HOME-->
+            <div class="show" *ngSwitchCase="'gallery'">
+                <h2 class="title"><mat-icon>image</mat-icon>{{title2}}</h2>
+                   <div class="redirect">
+                       
+                    <div class="profile">
+                        <div class="content1">
+                            <img class="my-img"src="https://z-m-scontent.fceb1-3.fna.fbcdn.net/v/t1.6435-9/cp0/e15/q65/p320x320/229584277_1394788024210467_847904058863908333_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=85a577&efg=eyJpIjoibyJ9&_nc_eui2=AeFZxefCu51sH5pzUFVSB41Tn99efGxTiWqf3158bFOJavkTmd-a3QL8P0XC1m3klQ_TxjFy_DnGygBStO1oFUoq&_nc_ohc=eRnCPejN98IAX9ErhPw&_nc_ad=z-m&_nc_cid=1119&_nc_eh=09060ba0f77a99f737ba7747a7cb0dbd&_nc_rml=0&_nc_ht=z-m-scontent.fceb1-3.fna&oh=76cd4053f4a34f927b285dc3efd6d146&oe=619F217F" alt="">
+                            <p>Erica Cartel </p>
+                       </div>
+                       
+                    </div>
+                       
+                          <div *ngFor="let list of image">
+                           <img class="left" src='https://z-m-scontent.fceb1-3.fna.fbcdn.net/v/t1.6435-9/cp0/e15/q65/p320x320/229584277_1394788024210467_847904058863908333_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=85a577&efg=eyJpIjoibyJ9&_nc_eui2=AeFZxefCu51sH5pzUFVSB41Tn99efGxTiWqf3158bFOJavkTmd-a3QL8P0XC1m3klQ_TxjFy_DnGygBStO1oFUoq&_nc_ohc=eRnCPejN98IAX9ErhPw&_nc_ad=z-m&_nc_cid=1119&_nc_eh=09060ba0f77a99f737ba7747a7cb0dbd&_nc_rml=0&_nc_ht=z-m-scontent.fceb1-3.fna&oh=76cd4053f4a34f927b285dc3efd6d146&oe=619F217F' />
+                          </div>
+                     
+
+                   </div>
+            </div>
+
+            <!--Gallery-->
+
+            <div class="show" *ngSwitchCase="'profile'">
+                <h2 class="title"><mat-icon>person</mat-icon>{{title1}}</h2>
+                   <div class="redirect"[ngSwitch]="selection.value">
+                       
+                       <mat-card class="profile"*ngSwitchCase="'evsu'" >
+                           <h4 >{{msgevsu}}</h4>
+                       </mat-card><br>
+                       <mat-card class="profile"*ngSwitchCase="'prog'" >
+                        <h4 >{{msgprog}}</h4>
+                      </mat-card><br>
+                      <mat-card class="profile"*ngSwitchCase="'web'" >
+                        <h4 >{{msgweb}}</h4>
+                      </mat-card><br>
+                       <mat-card class="profile">
+
+            <div class="show" *ngSwitchCase="'contact'">
+                <h2 class="title"><mat-icon>phone</mat-icon>{{title3}}</h2>
+                   <div class="redirect" [ngSwitch]="selection.value">
+                    <mat-card class="profile"*ngSwitchCase="'number'" >
+                        <h4 >{{msgnumber}}{{number}}</h4>
+                    </mat-card><br>
+                    <mat-card class="profile"*ngSwitchCase="'email'" >
+                     <h4 >{{msgemail}}{{email}}</h4>
+                   </mat-card><br>
+                  
+                    <mat-card class="profile">
+
+                        <div class="content1">
+                            <img class="my-img"src="https://z-m-scontent.fceb1-3.fna.fbcdn.net/v/t1.6435-9/cp0/e15/q65/p320x320/229584277_1394788024210467_847904058863908333_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=85a577&efg=eyJpIjoibyJ9&_nc_eui2=AeFZxefCu51sH5pzUFVSB41Tn99efGxTiWqf3158bFOJavkTmd-a3QL8P0XC1m3klQ_TxjFy_DnGygBStO1oFUoq&_nc_ohc=eRnCPejN98IAX9ErhPw&_nc_ad=z-m&_nc_cid=1119&_nc_eh=09060ba0f77a99f737ba7747a7cb0dbd&_nc_rml=0&_nc_ht=z-m-scontent.fceb1-3.fna&oh=76cd4053f4a34f927b285dc3efd6d146&oe=619F217F" alt="">
+                            <p>Erica Cartel </p>
+                       </div>
+                       <input type="hidden" #selection>
+
+                           <button mat-button (click)="selection.value = 'evsu'" tabindex="0">
+                                <i><mat-icon>school</mat-icon> EVSU</i>
+                            </button>
+                           <button mat-button (click)="selection.value = 'prog'" tabindex="0">
+                                <i ><mat-icon>code</mat-icon> Programmer</i>
+                           </button>
+                            <button mat-button (click)="selection.value = 'web'" tabindex="0">
+                                <i><mat-icon>http</mat-icon> WebDeveloper</i>
+                           </button>
+                       </mat-card>
+                   </div>
+            </div>
+
+                           <button mat-button (click)="selection.value = 'number'" tabindex="0">
+                                <i><mat-icon>phone</mat-icon> Mobile Number</i>
+                            </button>
+                           <button mat-button (click)="selection.value = 'email'" tabindex="0">
+                                <i ><mat-icon>email</mat-icon> Email</i>
+                           </button>
+                           <button mat-button (click)="selection.value = 'email'" tabindex="0">
+                            <i ><mat-icon>email</mat-icon> erikajoy.cartel@evsu.edu.ph</i>
+                          </button>
+                          <button mat-button >
+                            <i ><mat-icon>email</mat-icon> erikajoy.cartel@evsu.edu.ph</i>
+                          </button>
+                            
+                       </mat-card>
+                       
+                   </div>
+                </div>
 
                 
     </mat-drawer-content>
